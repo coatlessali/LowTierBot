@@ -39,24 +39,32 @@ async def on_message(message):
     # Make the bot ignore itself
     if message.author.bot:
         return
-    # Admins only
-    if not message.author.guild_permissions.administrator:
-        # Secret author backdoor that isn't hidden in the slightest
-        if not message.author == "coatlessali":
-            return
+
+    # Filter for non-admins and definitely not ali
+    admin = message.author.guild_permissions.administrator
+    author = message.author
+
+    is_not_admin = not admin
+    is_not_ali = not (author == "coatlessali")
+
+    worthless_cuck = is_not_admin and is_not_ali
+
+    if worthless_cuck:
         return
         
     # Check if there's a message being replied to, and shove that message into "recipient_message"
     try:
         recipient_message = await bot.get_channel(message.channel.id).fetch_message(message.reference.message_id)
     except:
-        # If not a reply, then don't execute anything else
+        # If the message isn't a reply, then don't execute anything else
         return
 
-    # "reply_list" is modifiable to insert your own quotes that definitely don't involve suicide
+    # Check to see if someone is getting that ass banned
     if "get that ass banned" in message.content.lower():
-        reply_list = ["and don't ever come up in my shit again."]
+        # Below is a list of possible replies, seperated by comma and quotes.
+        reply_list = ["and don't ever come up in my shit again.", "You worthless cuck."]
         await recipient_message.reply(random.choice(reply_list))
+        # Initiate kicking
         await recipient_message.author.kick()
 
 @bot.event
