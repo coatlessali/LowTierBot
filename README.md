@@ -1,6 +1,12 @@
-Kicks any user that is replied to with the phrase "get that ass banned".
+#### Features:
+- Allows admins to kick users by replying to them with the phrases "get that ass banned", or "crush <his/her/their/etc> skull".
+- Trans friendly, supports any pronouns
+- Can reproduce its source code on command
+- Licensed under the WTFPL for complete and total freedom*
 
-Dependencies:
+\* This is not legal advice. Consult a copyright lawyer with any questions regarding usage.
+
+#### Dependencies:
 - discord.py
 - random
 - nacl
