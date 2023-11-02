@@ -61,7 +61,7 @@ async def on_message(message):
 
     # Check to see if someone is getting that ass banned
     contents = message.content.lower()
-    crush_skull = "mods" in contents "crush" in contents and "skull" in contents
+    crush_skull = "mods" in contents and "crush" in contents and "skull" in contents
     ass_banned = "get that ass banned" in contents
     kick_trigger = crush_skull or ass_banned
     
