@@ -60,7 +60,12 @@ async def on_message(message):
         return
 
     # Check to see if someone is getting that ass banned
-    if "get that ass banned" in message.content.lower():
+    contents = message.content.lower()
+    crush_skull = "mods" in contents "crush" in contents and "skull" in contents
+    ass_banned = "get that ass banned" in contents
+    kick_trigger = crush_skull or ass_banned
+    
+    if kick_trigger:
         # Below is a list of possible replies, seperated by comma and quotes.
         reply_list = ["and don't ever come up in my shit again.", "You worthless cuck."]
         await recipient_message.reply(random.choice(reply_list))
